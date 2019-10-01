@@ -1,12 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 import styles from './poke.css'
-
-function getRandomInt (min: number, max: number): number {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
+import { getRandomInt } from 'components/getRandomInt'
 
 type PokeDataKey =
 'back_default' |
