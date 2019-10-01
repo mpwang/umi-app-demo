@@ -4,7 +4,7 @@
     "start": "umi dev",
     "build": "umi build",
     "test": "umi test",
-    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx src/pages",
+    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx src",
     "precommit": "lint-staged"
   },
   "dependencies": {
