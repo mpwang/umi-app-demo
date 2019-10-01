@@ -28,6 +28,14 @@
   ],
   "rules": {
     "no-console": "warn",
+    "semi": [
+      "error",
+      "never"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
     "jsx-a11y/anchor-has-content": "off",
     "react/display-name": [
       true,
