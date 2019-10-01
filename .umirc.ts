@@ -1,4 +1,5 @@
 import { IConfig } from 'umi-types';
+const path = require('path');
 
 // ref: https://umijs.org/config/
 const config: IConfig =  {
@@ -23,6 +24,10 @@ const config: IConfig =  {
       },
     }],
   ],
+  chainWebpack(config, {webpack}) {
+    // alias for .js .jsx
+    config.resolve.alias.set('components', path.resolve(__dirname, 'src/components/'))
+  }
 }
 
 export default config;

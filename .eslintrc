@@ -8,11 +8,14 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json",
+    "project": [
+      "./tsconfig.json"
+    ],
     "ecmaFeatures.jsx": true
   },
   "plugins": [
     "@typescript-eslint",
+    "react",
     "jsx-a11y"
   ],
   "overrides": [
@@ -37,12 +40,7 @@
       "single"
     ],
     "jsx-a11y/anchor-has-content": "off",
-    "react/display-name": [
-      true,
-      {
-        "ignoreTranspilerName": true
-      }
-    ],
+    "react/display-name": "off",
     "@typescript-eslint/indent": [
       2,
       2

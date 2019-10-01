@@ -10,8 +10,13 @@
     "baseUrl": ".",
     "strict": true,
     "paths": {
-      "@/*": ["src/*"]
+      "components/*": [
+        "src/components/*"
+      ]
     },
     "allowSyntheticDefaultImports": true
-  }
+  },
+  "exclude": [
+    "./node_modules/"
+  ]
 }
