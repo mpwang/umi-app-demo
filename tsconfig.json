@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./built",
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
@@ -14,9 +15,7 @@
         "src/components/*"
       ]
     },
+    "allowJs": true,
     "allowSyntheticDefaultImports": true
-  },
-  "exclude": [
-    "./node_modules/"
-  ]
+  }
 }
