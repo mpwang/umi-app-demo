@@ -2,32 +2,8 @@ import React from 'react'
 import _ from 'lodash'
 import styles from './poke.css'
 import { getRandomInt } from 'components/getRandomInt'
+import { getPokemon, PokeDataKey, PokeData } from 'components/getPokemon'
 
-type PokeDataKey =
-'back_default' |
-'back_female' |
-'back_shiny' |
-'back_shiny_female' |
-'front_default' |
-'front_female' |
-'front_shiny' |
-'front_shiny_female'
-
-type PokeData = {
-  [key in PokeDataKey]: string | undefined
-}
-
-async function getPokemon (pokemonId: number) {
-  const api = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
-
-  let response = await fetch(api)
-  if (!response.ok) {
-    throw new Error('Network response was not ok.')
-  }
-  response = await response.json()
-  const pokemon: PokeData = _.get(response, 'sprites')
-  return pokemon
-}
 
 const PokeDetail: React.FC<{pokeData: PokeData}> = (props) => {
   const { pokeData } = props
@@ -78,7 +54,7 @@ class PokeApi extends React.Component<PokeApiProps, PokeApiState> {
     }
   }
 
-  handleClick = () => {
+  handleOnClick = () => {
     const { history } = this.state
     const pokemonId = getRandomInt(1, 500)
 
@@ -101,7 +77,7 @@ class PokeApi extends React.Component<PokeApiProps, PokeApiState> {
     const noHistory = !_.isEmpty(_.compact(history))
     return (
       <div>
-        <button onClick={this.handleClick}>search</button>
+        <button onClick={this.handleOnClick}>search</button>
         <PokeDetail pokeData={current} />
         <div className={styles.clearfix} />
         <div>
